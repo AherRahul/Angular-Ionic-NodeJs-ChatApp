@@ -1,0 +1,27 @@
+<ion-header class="toolbar_header">
+  <ion-navbar>
+    <ion-title>People</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="group">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 col-md-4 col-lg-3 col-xl-2 class="created_group" *ngFor="let user of allUsers" (click)="ViewProfile(user)">
+          <div class="container">
+            <div class="imgs">
+              <img class="imgBg" src="http://res.cloudinary.com/ratingapp/image/upload/v{{user.picVersion}}/{{user.picId}}">
+            </div>
+            <p ion-text color="dark">{{user.username}}</p>
+            <p ion-text color="blue-color" *ngIf="user.country">
+              {{user.country}}
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

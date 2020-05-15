@@ -1,0 +1,31 @@
+<ion-header class="toolbar_header">
+  <ion-navbar>
+    <ion-title>Alerts</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="alert-card" *ngFor="let alert of notifications">
+    <ion-item class="">
+      <ion-avatar class="ionAvatar" item-start>
+        <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{alert.senderId.picVersion}}/{{alert.senderId.picId}}">
+      </ion-avatar>
+
+      <p text-wrap class="msg">{{alert.message}}</p>
+      <p class="postTime">{{GetTime(alert.created)}}</p>
+      <ion-row>
+        <ion-col col>
+          <button ion-button icon-left clear (click)="MarkAlert(alert)">
+            <ion-icon name="checkmark" *ngIf="!alert.read"></ion-icon>
+            <ion-icon name="done-all" *ngIf="alert.read" class="read"></ion-icon>
+          </button>
+          <button ion-button icon-left clear (click)="DeleteAlert(alert)">
+            <ion-icon name="trash"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-item>
+  </ion-card>
+</ion-content>

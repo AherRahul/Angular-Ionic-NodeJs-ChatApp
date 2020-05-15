@@ -1,0 +1,96 @@
+page-view-profile {
+  ion-header {
+    .toolbar-md {
+      background-color: color($colors, blue-color);
+    }
+    .menuBtn {
+      color: white;
+      float: right;
+      padding: 0px;
+    }
+
+    .menuIcon {
+      color: #fff;
+      padding: 0px;
+    }
+
+    .titleBtn {
+      padding: 0px;
+      margin-left: -5px !important;
+    }
+
+    .toolbar-title-md {
+      font-size: 25px !important;
+    }
+
+    .bar-button-md {
+      width: 10px;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .button-inner {
+      max-width: 30px;
+      margin: 0px;
+      padding: 0px;
+    }
+  }
+
+  .header-image {
+    height: 30vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: -1;
+  }
+
+  .main-content {
+    margin-top: -20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 55px -16px rgba(0, 0, 0, 0.75);
+    position: relative !important;
+  }
+  div.circularBtn {
+    max-width: 200px;
+    max-height: 200px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-size: 100%;
+    margin-top: -70px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #4aa1f3 no-repeat !important;
+    overflow: hidden;
+  }
+  div.circularBtn img {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .profile-description {
+    font-size: 15px;
+    color: #888;
+  }
+
+  ion-segment-button {
+    color: white !important;
+  }
+
+  .userPosts {
+    background: linear-gradient(180deg, #4aa1f3, #4aa1f3);
+  }
+}

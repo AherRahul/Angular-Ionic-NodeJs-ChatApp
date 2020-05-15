@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      <ion-avatar item-start>
+        <img src="http://placehold.it/50x50" style="margin-right: 10px">
+      </ion-avatar>
+      <p color="graycolor">Manny</p>
+      <p color="graycolor">man@test.com</p>
+    </ion-list-header>
+  </ion-list>
+
+  <ion-list no-border>
+    <ion-item>
+      <ion-icon name="settings" color="graycolor" item-start></ion-icon>
+      <ion-label color="graycolor">Change Password</ion-label>
+      <button item-end clear ion-button color="primary" (click)="ChangePasswordPage()">
+        View
+      </button>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-icon name="power" color="graycolor" item-start></ion-icon>
+      <button ion-button color="primary" (click)="Logout()">
+        Logout
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

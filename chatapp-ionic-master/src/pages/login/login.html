@@ -1,0 +1,26 @@
+<ion-content class="sign" padding>
+  <div class="appForm" ion-fixed padding margin-bottom style="position: absolute !important; top: 0%; bottom: 0%; left: 0; margin-bottom: 1%;">
+    <div class="logo">
+      <h2>Chat App</h2>
+    </div>
+
+    <ion-list style="margin-top: 43% !important">
+      <ion-item style="position: relative !important;">
+        <ion-icon name="ios-mail-outline" item-left></ion-icon>
+        <ion-input class="input-field" [(ngModel)]="username" name="username" type="text" placeholder="Username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="md-key" item-left></ion-icon>
+        <ion-input class="input-field" [(ngModel)]="password" name="password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+
+      <button ion-button block class="login-button" (click)="LoginUser()">Login</button>
+
+      <p class="signin">
+        <button ion-button block clear color="color3" (click)="RegisterPage()">Sign Up</button>
+      </p>
+    </ion-list>
+
+  </div>
+</ion-content>

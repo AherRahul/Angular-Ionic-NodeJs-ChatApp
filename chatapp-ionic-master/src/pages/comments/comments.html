@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Comments</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-item class="addPost">
+          <ion-textarea class="message" [(ngModel)]="comment" placeholder="Write Comment"></ion-textarea>
+        </ion-item>
+      </ion-col>
+      <ion-col col-12>
+        <button class="comment" ion-button block (click)="AddComment()">
+          Add Comment
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-list>
+        <ion-item *ngFor="let comment of commentsArray">
+          <ion-avatar item-left>
+            <img class="circle imgCircle" src="http://res.cloudinary.com/ratingapp/image/upload/v{{comment.userId.picVersion}}/{{comment.userId.picId}}">
+          </ion-avatar>
+          <h2 class="username">
+            {{comment.userId.username}}
+          </h2>
+          <p class="postTime">
+            {{GetCommentTime(comment.createdAt)}}
+          </p>
+          <p class="comment">
+            {{comment.comment}}
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar class="tabs_bar">
+    <ion-segment [(ngModel)]="stream">
+      <ion-segment-button value="post">
+        Streams
+      </ion-segment-button>
+      <ion-segment-button value="top">
+        Top Streams
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="content">
+  <div [ngSwitch]="stream">
+    <ion-list *ngSwitchCase="'post'">
+      <ion-item class="content-item1" *ngFor="let stream of streamsArray">
+        <ion-card class="content-card1">
+          <ion-item class="cardItem">
+            <ion-avatar class="ionAvatar" item-start>
+              <img class="userImg" src="http://res.cloudinary.com/ratingapp/image/upload/v{{stream.user.picVersion}}/{{stream.user.picId}}">
+            </ion-avatar>
+
+            <h2 class="username">
+              {{stream.username}}
+            </h2>
+            <p class="postTime">{{GetPostTime(stream.created)}}</p>
+            <p text-wrap class="postCity" *ngIf="stream.user.city && stream.user.country">
+              @{{stream.user.city}}, {{stream.user.country}}
+            </p>
+          </ion-item>
+
+          <div style="width: 100%;" *ngIf="stream.imgId">
+            <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{stream.imgVersion}}/{{stream.imgId}}">
+          </div>
+
+          <ion-card-content>
+            <p text-wrap class="post">{{stream.post}}</p>
+          </ion-card-content>
+
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear (click)="LikePost(stream)">
+                <ion-icon name="thumbs-up" [ngClass]="(!CheckInLikesArray(stream.likes, user.username)) ? 'notLiked' : 'liked'"></ion-icon>
+                <div>{{stream.totalLikes}}</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear (click)="AddComment(stream)">
+                <ion-icon name="text" [ngClass]="(!CheckInLikesArray(stream.comments, user.username)) ? 'notLiked' : 'liked'"></ion-icon>
+                <div>{{stream.comments.length}}</div>
+              </button>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'top'">
+      <ion-item class="content-item1" *ngFor="let stream of topStreamsArray">
+        <ion-card class="content-card1">
+          <ion-item class="cardItem">
+            <ion-avatar class="ionAvatar" item-start>
+              <img class="userImg" src="http://res.cloudinary.com/ratingapp/image/upload/v{{stream.user.picVersion}}/{{stream.user.picId}}">
+            </ion-avatar>
+
+            <h2 class="username">
+              {{stream.username}}
+            </h2>
+            <p class="postTime">{{GetPostTime(stream.created)}}</p>
+            <p text-wrap class="postCity" *ngIf="stream.user.city && stream.user.country">
+              @{{stream.user.city}}, {{stream.user.country}}
+            </p>
+          </ion-item>
+
+          <div style="width: 100%;" *ngIf="stream.imgId">
+            <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{stream.imgVersion}}/{{stream.imgId}}">
+          </div>
+
+          <ion-card-content>
+            <p text-wrap class="post">{{stream.post}}</p>
+          </ion-card-content>
+
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear (click)="LikePost(stream)">
+                <ion-icon name="thumbs-up" [ngClass]="(!CheckInLikesArray(stream.likes, user.username)) ? 'notLiked' : 'liked'"></ion-icon>
+                <div>{{stream.totalLikes}}</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear (click)="AddComment(stream)">
+                <ion-icon name="text" [ngClass]="(!CheckInLikesArray(stream.comments, user.username)) ? 'notLiked' : 'liked'"></ion-icon>
+                <div>{{stream.comments.length}}</div>
+              </button>
+            </ion-col>
+          </ion-row>
+
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-fab right bottom fixed>
+    <button ion-fab color="danger" (click)="PostModal()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

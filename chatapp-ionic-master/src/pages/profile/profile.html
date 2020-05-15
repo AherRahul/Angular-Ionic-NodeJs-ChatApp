@@ -1,0 +1,58 @@
+<ion-header no-border class="toolbar_header">
+  <ion-navbar transparent>
+    <ion-title class="titleBtn" *ngIf="userData">
+      {{userData.username}}
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="SettingsPage()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="userPosts">
+  <div class="header-image" [style.background-image]="headerImage"></div>
+  <div class="main-content" text-wrap text-center>
+    <div class="circularBtn">
+      <img [style.background-image]="headerImage">
+    </div>
+    <h2 *ngIf="userData">{{userData.username}}</h2>
+    <p *ngIf="userData">{{userData.city}}
+      <span>&bull;</span> {{userData.country}}</p>
+  </div>
+  <div [(ngModel)]="userprofile">
+    <ion-segment color="primary" (ionChange)="SegmentChanged($event)">
+      <ion-segment-button value="posts">
+        Posts
+      </ion-segment-button>
+      <ion-segment-button value="following">
+        Following
+      </ion-segment-button>
+      <ion-segment-button value="followers">
+        Followers
+      </ion-segment-button>
+      <ion-segment-button value="images">
+        Images
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div class="userPosts" [ngSwitch]="userprofile">
+    <ion-list *ngSwitchCase="'posts'">
+      <app-posts [user]="userData"></app-posts>
+    </ion-list>
+    <ion-list *ngSwitchCase="'following'">
+      <app-user-friends [friends]="userFriends"></app-user-friends>
+    </ion-list>
+    <ion-list *ngSwitchCase="'followers'">
+      <app-user-friends [friends]="userFriends"></app-user-friends>
+    </ion-list>
+    <ion-list *ngSwitchCase="'images'">
+      <app-images [images]="userImages"></app-images>
+    </ion-list>
+  </div>
+
+
+</ion-content>

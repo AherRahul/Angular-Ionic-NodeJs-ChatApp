@@ -1,0 +1,48 @@
+<ion-header class="toolbar_header">
+  <ion-navbar>
+    <ion-title>Chat List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="alert-card" *ngFor="let chat of chatList" (click)="ChatPage(chat)">
+    <ion-item class="">
+      <ion-avatar class="ionAvatar" item-start>
+        <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{chat.receiverId.picVersion}}/{{chat.receiverId.picId}}">
+      </ion-avatar>
+      <ion-grid>
+        <ion-row>
+          <ion-col col>
+            <h5 ion-text class="sender">{{chat.receiverId.username}}</h5>
+          </ion-col>
+
+          <ion-col col-auto>
+            <span class="postTime" margin-left ion-text>
+              {{GetTime(chat.msgId.message[chat.msgId.message.length - 1].createdAt)}}
+            </span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid class="msgGrid">
+        <ion-row>
+          <ion-col col>
+            <span>
+              <ion-icon name="done-all" class="read" *ngIf="chat.msgId.message[chat.msgId.message.length - 1].isRead"></ion-icon>
+              {{chat.msgId.message[chat.msgId.message.length - 1].body.substr(0, 10)}}...
+            </span>
+          </ion-col>
+
+          <ion-col col-auto>
+            <p class="msg" *ngIf="CheckIfFalse(chat.msgId.message, chat.receiverId.username) > 0">
+              {{CheckIfFalse(chat.msgId.message, chat.receiverId.username)}}
+            </p>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-item>
+  </ion-card>
+</ion-content>

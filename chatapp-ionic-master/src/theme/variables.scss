@@ -1,0 +1,149 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: '../assets/fonts';
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+@import 'ionic.globals';
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$colors: (
+  primary: #64b5f6,
+  secondary: #32db64,
+  danger: #e56353,
+  light: #fff,
+  dark: #454545,
+  // color1:     #e34156,
+    color1: #64b5f6,
+  color2: #67c4b1,
+  color3: #fff,
+  color4: #fff,
+  lightwhite: #ffffff,
+  blue-color: #4aa1f3,
+  graycolor: #65737e
+);
+$content-padding: 8px;
+$content-margin: $content-padding;
+$control-height: 44px;
+$control-radius: 2px;
+// App  Variables
+$mainFont: 1.8rem;
+$appFonts: (
+  h3: 2.5rem,
+  h4: $mainFont + 0.1,
+  h5: $mainFont,
+  p: $mainFont - 0.1
+);
+@each $head, $fontSize in $appFonts {
+  #{$head} {
+    font-size: $fontSize !important;
+  }
+}
+
+// 4aa1f3
+//grid variables
+$grid-padding-width: $content-padding;
+// appForm variables
+$appForm_Item_Height: $control-height;
+$appForm_Item_Text_color: color($colors, dark);
+$appForm_icon_color: color($colors, color2);
+$appForm_border_color: color($colors, color2);
+$appForm_border_radius: $control_radius;
+$appForm_text_font_size: $mainFont - 0.1rem;
+$appForm_text_font_weight: 500;
+$app_item_background: color($colors, color4);
+$text-input-placeholder-color: color($colors, dark);
+$item-md-padding-top: 0px;
+$text-input-md-margin-right: 0px;
+$item-md-padding-bottom: 0px;
+$text-input-md-margin-left: 0px;
+//  select
+$select-md-icon-color: color($colors, color2);
+$select-md-placeholder-color: $text-input-placeholder-color;
+// button variables
+$button-md-margin-top: 0px;
+$button-md-margin-end: 0px;
+$button-md-margin-bottom: 0px;
+$button-md-margin-start: 0px;
+$button-md-padding-start: $content-padding;
+$button-md-padding-end: $button-md-padding-start;
+$button-md-padding-bottom: 0px;
+$button-md-height: $control-height;
+$button-md-border-radius: $control-radius;
+$button-md-font-size: $mainFont - 0.1;
+$button-md-text-color: color($colors, light);
+// header Variables
+$toolbar-md-title-text-align: left;
+$toolbar-md-title-font-size: $mainFont;
+$toolbar-md-title-font-weight: 400;
+$toolbar-md-title-text-color: color($colors, light);
+$nav_Bar_Padding: $content-padding/2;
+$header_icon_size: 2rem;
+$header_icon_color: $toolbar-md-title-text-color;
+$toolBar_Back_Ground: color($colors, color1);
+// toggole variables
+$toggle-md-width: 40px;
+$toggle-md-height: 20px;
+$toggle-md-background-color-off: color($colors, color3);
+$toggle-md-background-color-on: color($colors, color2);
+$toggle-md-border-color-off: color($colors, color3);
+$toggle-md-handle-background-color: color($colors, light);
+// tabs variables
+$tabs-md-tab-icon-color: color($colors, light);
+$tab_button_height: 50px;
+// side menu Variables
+$menu-width: 90%;
+$menu-small-width: $menu-width;
+$menu_item_height: 34px;
+// Radio Variables
+$radioSize: 24px;
+$radioRadius: 50%;
+// badges Variables
+$badge-font-size: 1rem;
+$badge-font-weight: 300;
+// checkbox variables
+$checkbox-md-background-color-off: color($colors, color2);
+$checkbox-md-background-color-on: color($colors, color2);
+$checkbox-md-icon-size: 16px;
+$checkbox-md-icon-border-width: 0px;
+$checkbox-md-icon-border-radius: 2px;
+$checkbox-md-icon-checkmark-width: 0px;
+$toolbar-md-title-text-color: color($colors, lightwhite);
+$segment-button-md-text-color-activated: color($colors, lightwhite);
+$segment-button-md-border-color-activated: color($colors, lightwhite);
+// $searchbar-md-input-search-icon-color: color($colors, lightwhite);
+// $searchbar-md-input-placeholder-color: color($colors, lightwhite);
+// $searchbar-md-input-clear-icon-color: color($colors, lightwhite);
+$alert-md-input-text-color: color($colors, graycolor);
+$text-input-placeholder-color: color($colors, lightwhite);
+$text-input-md-show-focus-highlight: false;
+$tabs-md-tab-icon-color: color($colors, lightwhite);
+$tabs-md-tab-icon-color-active: color($colors, lightwhite);
+$popover-md-box-shadow-color: none !default;
+$segment-button-md-icon-size: 1.5rem;
+$segment-button-md-padding-end: 0px;
+$segment-button-md-font-size: 1.3rem;
+@import 'ionic.theme.default';
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+@import 'ionic.ionicons';
+// Fonts
+// --------------------------------------------------
+@import 'roboto';
+@import 'noto-sans';

@@ -1,0 +1,43 @@
+<div>
+  <ion-item class="content-item1" *ngFor="let stream of userPosts">
+    <ion-card class="content-card1">
+      <ion-item class="cardItem">
+        <ion-avatar class="ionAvatar" item-start>
+          <img class="userImg" src="http://res.cloudinary.com/ratingapp/image/upload/v{{userData.picVersion}}/{{userData.picId}}">
+        </ion-avatar>
+
+        <h2 class="username">
+          {{stream.postId.username}}
+        </h2>
+        <p class="postTime">{{GetPostTime(stream.created)}}</p>
+        <p text-wrap class="postCity" *ngIf="userData">
+          @{{userData.city}}, {{userData.country}}
+        </p>
+      </ion-item>
+
+      <div style="width: 100%;" *ngIf="stream.postId.imgVersion">
+        <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{stream.postId.imgVersion}}/{{stream.postId.imgId}}">
+      </div>
+
+      <ion-card-content>
+        <p text-wrap class="post">{{stream.post}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-left clear>
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{stream.postId.totalLikes}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear>
+            <ion-icon name="text"></ion-icon>
+            <div>{{stream.postId.comments.length}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+
+    </ion-card>
+  </ion-item>
+</div>

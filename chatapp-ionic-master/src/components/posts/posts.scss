@@ -1,0 +1,86 @@
+app-posts {
+  .content-item1 {
+    background: linear-gradient(180deg, #4aa1f3, #64b5f6);
+    margin: 0px auto !important;
+    text-align: center;
+  }
+  .content-card1 {
+    padding: 5px;
+    margin: 0px auto !important;
+    text-align: center;
+    border-radius: 2%;
+    margin: 10px 10px 5px 10px !important;
+  }
+  .cardItem {
+    padding-left: 10px !important;
+  }
+  .ionAvatar {
+    margin-left: 0px !important;
+  }
+  .content-card1 .postImage {
+    width: 88%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .content-card1 .username {
+    font-weight: bold;
+    color: #64b5f6;
+    padding: 0px !important;
+    text-align: left !important;
+    margin-top: 5px;
+    padding-top: 5px !important;
+  }
+  .content-card1 .postTime {
+    font-size: 14px !important;
+  }
+  .content-card1 .postCity {
+    font-size: 14px !important;
+  }
+  .content-card1 .post {
+    font-size: 1.5rem !important;
+    text-align: left;
+    margin-left: -7px;
+    margin-top: 5px;
+  }
+  .item-inner {
+    border: none !important;
+  }
+  .fab {
+    border: 2px double #64b5f6;
+    background: #64b5f6;
+  }
+  .noResultItem {
+    background: linear-gradient(180deg, #4aa1f3, #64b5f6);
+    position: absolute;
+    color: #fff;
+    top: 40%;
+    left: 50%;
+    padding: 15px;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 100px;
+  }
+  .noResult {
+    color: #fff !important;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+  .postImage {
+    display: block;
+    max-width: 200px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 10px !important;
+  }
+  .notLiked {
+    color: #2e2c2c !important;
+  }
+}

@@ -1,0 +1,7 @@
+<ion-tabs>
+  <ion-tab [root]="tabRoot1" tabIcon="globe" tabTitle="Streams" (ionSelect)="ClickTab()"></ion-tab>
+  <ion-tab [root]="tabRoot2" tabIcon="home" [tabBadge]="msgCount > 0 ? msgCount : null" tabTitle="Chat" (ionSelect)="ClickTab()"></ion-tab>
+  <ion-tab [root]="tabRoot3" tabIcon="people" tabTitle="People" (ionSelect)="ClickTab()"></ion-tab>
+  <ion-tab [root]="tabRoot4" tabIcon="notifications-outline" [tabBadge]="count > 0 ? count : null" tabTitle="Alerts" (ionSelect)="ClickTab()"></ion-tab>
+  <ion-tab [root]="tabRoot5" tabIcon="person" tabTitle="Profile" (ionSelect)="ClickTab()"></ion-tab>
+</ion-tabs>

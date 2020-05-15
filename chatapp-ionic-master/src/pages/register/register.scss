@@ -1,0 +1,81 @@
+page-register {
+  .header {
+    background: #4aa1f3 !important;
+    border: none !important;
+    .toolbar {
+      .toolbar-background {
+        background: transparent !important;
+      }
+    }
+    .toolbar-md {
+      border: none !important;
+    }
+    .toolbar-title {
+      margin-left: -25px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .sign {
+    background: linear-gradient(180deg, #4aa1f3, #64b5f6);
+    text-align: center;
+  }
+
+  .logo {
+    img {
+      width: 180px;
+      height: 50px;
+    }
+    p {
+      margin: 0px;
+      color: color($colors, color4);
+      @include whiteNormal(15px, 1);
+    }
+  }
+  .signin {
+    margin: 0px;
+    color: color($colors, light);
+    @include whiteNormal(24px, 1);
+    display: inline;
+  }
+
+  .scroll-content {
+    overflow: hidden !important;
+  }
+
+  input {
+    @include placeholder {
+      color: color($colors, graycolor) !important;
+    }
+  }
+
+  .login-button {
+    text-transform: none;
+    border-radius: 3px !important;
+    background: white;
+    color: #4aa1f3 !important;
+    margin-top: 15px !important;
+  }
+
+  .text-input::-moz-placeholder {
+    color: color($colors, graycolor) !important;
+  }
+
+  .text-input:-ms-input-placeholder {
+    color: color($colors, graycolor) !important;
+  }
+
+  .text-input::-webkit-input-placeholder {
+    color: color($colors, graycolor) !important;
+  }
+}
+
+.alertCss {
+  .alert-title {
+    color: red !important;
+  }
+
+  .alert-sub-title {
+    font-size: 18px !important;
+  }
+}

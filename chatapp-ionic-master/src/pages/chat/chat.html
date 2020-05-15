@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons left class="backBtn">
+      <button ion-button icon-only (click)="GoBack()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-row>
+      <ion-col col-2 class="avatarCol">
+        <ion-avatar item-start class="avatar" *ngIf="receiver">
+          <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{receiver.picVersion}}/{{receiver.picId}}">
+        </ion-avatar>
+      </ion-col>
+
+      <ion-col col-10 class="nameCol">
+        <ion-title class="titleCol">
+          <h2 class="userTitle" *ngIf="receiverName">
+            {{receiverName}}
+            <p class="online" *ngIf="isOnline && !typing">Online</p>
+            <p class="online" *ngIf="typing">
+              {{receiverName}} is typing...
+            </p>
+          </h2>
+        </ion-title>
+      </ion-col>
+
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content style="margin-top:10px; margin-bottom: 10px">
+  <div class="message-wrspper" *ngFor="let message of msgArray">
+    <div class="left" *ngIf="sender.username !== receiverName && sender.username !== message.sendername">
+      <div class="chat-bubble left slide-left">
+        <div class="message">{{message.body}}</div>
+      </div>
+    </div>
+
+    <div class="right" *ngIf="sender.username === message.sendername">
+      <div class="chat-bubble right slide-right">
+        <div class="message">{{message.body}}</div>
+      </div>
+    </div>
+
+    <div class="cf"></div>
+  </div>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-item class="inputItem" style="margin-top: 0px !important">
+    <ion-input id="msgInput" [(ngModel)]="message" name="message" (keypress)="IsTyping()" placeholder="Send a message..."></ion-input>
+
+    <button class="emojiBtn" ion-button clear item-end (click)="Toggled()">😄</button>
+
+    <div class="emoji-content-editable" (emojiPickerCaretEmitter)="HandleCurrentCaret($event)" (input)="content = $event.target.textContent"
+      [textContent]="content" contenteditable="true"></div>
+
+    <button class="msgBtn" ion-button clear item-end (click)="PrivateMessage()">
+      <ion-icon class="footer-btn" name="send"></ion-icon>
+    </button>
+  </ion-item>
+
+  <div>
+    <button class="emoji-toggle-button imgBtn" ion-button clear item-end [(emojiPickerIf)]="toggled" [emojiPickerDirection]="direction"
+      (emojiPickerSelect)="HandleSelection($event)"></button>
+  </div>
+
+</ion-footer>
