@@ -1,21 +1,23 @@
 .bodyDiv {
-  height: 100vh;
+    height: 100vh;
+    margin: 0px;
+    overflow-y: hidden;
 }
 
 div.bodyContainer {
-  margin-top: 50px !important;
+    margin-top: 20px !important;
 }
 
 .tabs a {
-  color: #64b5f6;
-  font-weight: bold;
-  font-size: 18px;
+    color: #64b5f6;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 .tabs .active {
-  background: inherit !important;
+    background: inherit !important;
 }
 
 .auth-content {
-  height: 515px !important;
+    height: 515px !important;
 }

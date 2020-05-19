@@ -68,7 +68,11 @@ export class ToolbarComponent implements OnInit, AfterViewInit {
   GetUser() {
     this.usersService.GetUserById(this.user._id).subscribe(
       data => {
-        this.imgUrl = data.result.images[0].imgUrl;
+        if (data.result.images.length !== 0 ) {
+          this.imgUrl = data.result.images[0].imgUrl;
+        } else {
+          this.imgUrl = '';
+        }
         this.imageId = data.result.picId;
         this.imageVersion = data.result.picVersion;
         this.notifcations = data.result.notifications.reverse();

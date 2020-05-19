@@ -12,13 +12,14 @@ module.exports = {
         const schema = Joi.object().keys({
             username: Joi.string()
                 .min(5)
-                .max(10)
+                .max(15)
                 .required(),
             email: Joi.string()
                 .email()
                 .required(),
             password: Joi.string()
                 .min(5)
+                .max(15)
                 .required()
         });
 
@@ -61,6 +62,7 @@ module.exports = {
                     const token = jwt.sign({ data: user }, dbConfig.secret, {
                         expiresIn: '5h'
                     });
+
                     res.cookie('auth', token);
                     res
                         .status(HttpStatus.CREATED)
