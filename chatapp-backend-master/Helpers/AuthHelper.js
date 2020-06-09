@@ -29,7 +29,7 @@ module.exports = {
         next();
       }
       req.user = decoded.data;
-      next();
+      next(); 
     });
   }
 };
