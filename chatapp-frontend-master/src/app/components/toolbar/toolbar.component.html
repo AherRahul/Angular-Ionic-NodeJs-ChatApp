@@ -1,6 +1,6 @@
 <nav class="nav-extended">
-    <div class="container">
-        <div class="nav-wrapper">
+    <div class="container-fluid" style="padding-left: 20px; padding-right: 20px; ">
+        <div class="nav-wrapper" >
             <a (click)="GoToHome()" class="brand-logo">Chat App</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li class="dropdown-button dropdown-trigger" data-target="dropdown">
@@ -8,7 +8,7 @@
                     <span class="nav-label-icon circle" *ngIf="count.length > 0">{{count.length}}</span>
                     <ul id='dropdown' class='dropdown-content col s12 collection'>
                         <li class="collection-item avatar" *ngFor="let data of notifcations">
-                            <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{data.senderId.picVersion}}/{{data.senderId.picId}}" class="circle">
+                            <img src="http://res.cloudinary.com/duojkrgue/image/upload/v{{data.senderId.picVersion}}/{{data.senderId.picId}}" class="circle">
                             <span [ngClass]="data.read ? 'isRead' : 'unread' ">{{data.message}}</span>
                             <p class="time">{{TimeFromNow(data.created)}}</p>
                         </li>
@@ -25,7 +25,7 @@
                     <span class="nav-label-icon circle" *ngIf="msgNumber > 0">{{msgNumber}}</span>
                     <ul id='dropdown1' class='dropdown-content col s12 collection'>
                         <li class="collection-item avatar" *ngFor="let chat of chatList" (click)="GoToChatPage(chat.receiverId.username)">
-                            <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{chat.receiverId.picVersion}}/{{chat.receiverId.picId}}" class="circle">
+                            <img src="http://res.cloudinary.com/duojkrgue/image/upload/v{{chat.receiverId.picVersion}}/{{chat.receiverId.picId}}" class="circle">
                             <span class="title">
                               {{chat.receiverId.username}}
                               <a class="secondary-content">
@@ -57,7 +57,12 @@
         </div>
         <div class="nav-content">
             <div class="nav-div">
-                <img class="circle responsive-img" src="{{imgUrl || '../../../../../assets/original.png'}}">
+                <div *ngIf="imgUrl">
+                    <img class="circle responsive-img" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{imageVersion}}/{{imageId}}">
+                </div>
+                <div *ngIf="!imgUrl">
+                    <img class="circle responsive-img" src="../../../assets/original.png">
+                </div>
             </div>
             <h1 class="profile-name">{{user.username}}</h1>
             <!-- <p class="user-text">This is a test</p> -->

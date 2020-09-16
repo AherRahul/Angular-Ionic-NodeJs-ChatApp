@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 .tabs .indicator {
-  background-color: #64b5f6 !important;
+  background-color: #64b5f6!important;
 }
 
 .btn {
-  background-color: #64b5f6 !important;
+  background-color: #64b5f6!important;
 }
 
 ::-webkit-scrollbar {
@@ -28,5 +28,5 @@
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background-color: #64b5f6;
+  background: #64b5f6;
 }

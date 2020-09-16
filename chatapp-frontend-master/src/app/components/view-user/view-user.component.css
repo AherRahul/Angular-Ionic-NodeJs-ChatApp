@@ -36,17 +36,17 @@
 .postImage {
   width: 100% !important;
   margin: 0 auto !important;
-  left: 20px !important;
-  top: 10px !important;
+  left: 0px !important;
+  top: 0px !important;
 }
 
 .card_image {
-  width: 200px;
+  width: 100%;
   height: auto !important;
 }
 
 .tabs a {
-  color: #64b5f6 !important;
+  color: #64b5f6!important;
   font-weight: bold;
   font-size: 16px;
 }
@@ -57,11 +57,15 @@
 }
 
 .tabs a .indicator {
-  background-color: #64b5f6 !important;
+  background-color: #64b5f6!important;
 }
 
 .collection {
   border: none !important;
+  box-shadow: 10px 10px 5px #aaaaaa; 
+  padding: 20px; 
+  background-color: #f3f1f1; 
+  border-radius: 3px;
 }
 
 .collection-item {

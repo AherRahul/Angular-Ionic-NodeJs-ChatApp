@@ -27,6 +27,12 @@
     <div class="col s12 m4 l3">
       <div class="row">
         <div class="col s12">
+          <div class="card-image imgDiv" *ngIf="user.picVersion != '1531305955'">
+            <img class="imgCircle responsive-img" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{user.picVersion}}/{{user.picId}}">
+          </div>
+          <div class="card-image imgDiv" *ngIf="user.picVersion === '1531305955'">
+              <img class="imgCircle responsive-img" src="../../../assets/original.png">
+          </div>
           <span class="title">{{name}}</span>
           <h2 class="cityName" *ngIf="user">{{user.city}}, {{user.country}}</h2>
         </div>
@@ -39,11 +45,8 @@
           <div class="row" *ngIf="postsTab">
             <ul class="collection col s12 m12 l10" *ngFor="let post of posts">
               <li class="collection-item avatar">
-                <img class="circle" src="http://res.cloudinary.com/ratingapp/image/upload/v{{user.picVersion}}/{{user.picId}}">
+                <img class="circle" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{user.picVersion}}/{{user.picId}}">
                 <span class="post">{{post.postId.username}}</span>
-                <span data-target="modal" class="title secondary-content modal-trigger" (click)="OpenEditModal(post)">
-                  Edit
-                </span>
                 <p class="time">{{TimeFromNow(post.postId.created)}}
                   <br> @{{user.city}}, {{user.country}}
                 </p>
@@ -52,7 +55,7 @@
                 <div class="col s12">
                   <div class="card">
                     <div class="card-image card_image" *ngIf="post.postId.imgId">
-                      <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.postId.imgVersion}}/{{post.postId.imgId}}">
+                      <img class="postImage" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{post.postId.imgVersion}}/{{post.postId.imgId}}">
                     </div>
                     <div class="card-content">
                       <p>{{post.postId.post}}</p>
@@ -77,7 +80,7 @@
             <div class="col s12 m4 l4" *ngFor="let user of following">
               <div class="card">
                 <div class="card-image imgDiv">
-                  <img class="imgCircle" src="http://res.cloudinary.com/ratingapp/image/upload/v{{user.userFollowed.picVersion}}/{{user.userFollowed.picId}}">
+                  <img class="imgCircle" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{user.userFollowed.picVersion}}/{{user.userFollowed.picId}}">
                 </div>
                 <div class="card-action">
                   <h3 class="card-title">{{user.userFollowed.username}}</h3>
@@ -91,7 +94,7 @@
             <div class="col s12 m4 l4" *ngFor="let user of followers">
               <div class="card">
                 <div class="card-image imgDiv">
-                  <img class="imgCircle" src="http://res.cloudinary.com/ratingapp/image/upload/v{{user.follower.picVersion}}/{{user.follower.picId}}">
+                  <img class="imgCircle" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{user.follower.picVersion}}/{{user.follower.picId}}">
                 </div>
                 <div class="card-action">
                   <h3 class="card-title">{{user.follower.username}}</h3>

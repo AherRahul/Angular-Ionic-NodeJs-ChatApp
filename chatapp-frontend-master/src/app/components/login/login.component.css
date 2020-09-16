@@ -8,11 +8,11 @@
 #loginbtn {
   float: right;
   margin-right: 10px;
-  background-color: #64b5f6;
+  background: #64b5f6;
   font-weight: 500;
 }
 #title {
-  background-color: #64b5f6;
+  background: #64b5f6;
   color: white;
   padding: 8px;
   margin-top: 0px;
@@ -31,7 +31,7 @@ form {
 }
 
 .indeterminate {
-  background-color: #64b5f6 !important;
+  background-color: #64b5f6!important;
 }
 
 .input-field {

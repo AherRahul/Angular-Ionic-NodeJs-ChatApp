@@ -33,6 +33,7 @@ export class TopStreamsComponent implements OnInit {
     this.postService.getAllPosts().subscribe(
       data => {
         this.topPosts = data.top;
+        console.log(this.topPosts);
       },
       err => {
         if (err.error.token === null) {

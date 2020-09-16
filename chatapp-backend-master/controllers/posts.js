@@ -13,6 +13,7 @@ cloudinary.config({
 const Post = require('../models/postModels');
 const User = require('../models/userModels');
 
+
 module.exports = {
     AddPost(req, res) {
         const schema = Joi.object().keys({
@@ -191,5 +192,21 @@ module.exports = {
                 .status(HttpStatus.NOT_FOUND)
                 .json({ message: 'Post not found', post })
             );
+    },
+
+    async DeletePost(req, res) {
+        console.log("Called");
+        console.log(req.params.postId);
+        await Post.deleteOne({ "_id": req.params.postId}).exec((error, output) => {
+            if (error || output.deletedCount != 1) {
+                return res.status(400).json({
+                    error: "Error while deleting Post"
+                });
+            }
+
+            return res.json({
+                message: "Post Deleted..!"
+            })
+        });
     }
 };

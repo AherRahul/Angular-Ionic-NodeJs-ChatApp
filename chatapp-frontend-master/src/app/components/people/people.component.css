@@ -1,5 +1,5 @@
 .card-image {
-  height: 200px;
+  max-height: 200px;
   border: 2px solid #e7e7e7;
 }
 
@@ -57,5 +57,5 @@
 }
 
 .following {
-  color: #64b5f6 !important;
+  color: #64b5f6!important;
 }

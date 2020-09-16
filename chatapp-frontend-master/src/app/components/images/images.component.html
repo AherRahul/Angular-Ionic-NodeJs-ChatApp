@@ -1,14 +1,17 @@
 <app-toolbar></app-toolbar>
 
-<div class="container" style="margin-top: 30px">
+<div class="container-fluid" style="margin-top: 30px">
   <div class="row">
-    <div class="col s12 m4 l3">
-      <app-side></app-side>
+    <div class="col s12 l1">
+
+    </div>
+    <div class="col s12 m4 l3" style="box-shadow: 10px 10px 5px #aaaaaa; background-color: #f3f1f1; border-radius: 3px; padding: 10px; margin-right: 3%;">
+        <app-side></app-side>
     </div>
 
-    <div class="col s12 m8 l9">
-      <div class="row">
-        <div class="col s6">
+    <div class="col s12 m7 l7">
+      <div class="row" style="box-shadow: 10px 10px 5px #aaaaaa; margin-top: 10px; border: 10px solid #64b5f6; background-color: #f1f0f0; max-width: 100%; border-radius: 3px;">
+        <div class="col m6 l9 s6">
           <div class="file-field input-field">
             <div class="btn">
               <span>File</span>
@@ -20,7 +23,7 @@
           </div>
         </div>
 
-        <div class="col s6">
+        <div class="col m6 l3 s6">
           <div class="file-field input-field">
             <a class="waves-effect waves-light btn" (click)="Upload()">
               <i class="material-icons left">image</i>Upload Image
@@ -29,9 +32,9 @@
         </div>
       </div>
       <div class="row">
-        <div class="col s12 m6 l4" *ngFor="let image of images">
-          <div class="item-img-wrap imgDiv">
-            <img class="imgCircle" src="http://res.cloudinary.com/ratingapp/image/upload/v{{image.imgVersion}}/{{image.imgId}}">
+        <div class="col s12 m6 l3" *ngFor="let image of images">
+          <div class="item-img-wrap imgDiv" style="display: table-caption;">
+            <img class="imgCircle" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{image.imgVersion}}/{{image.imgId}}">
             <button class="btn imgBtn" (click)="SetProfileImage(image)">Set AS Profile</button>
           </div>
         </div>

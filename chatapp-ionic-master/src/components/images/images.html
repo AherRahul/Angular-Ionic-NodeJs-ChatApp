@@ -4,7 +4,7 @@
             <ion-col col-6 col-md-4 col-lg-3 col-xl-2 class="created_group" *ngFor="let image of userImages">
                 <div class="container">
                     <div class="imgs">
-                        <img class="imgBg" src="http://res.cloudinary.com/ratingapp/image/upload/v{{image.imgVersion}}/{{image.imgId}}">
+                        <img class="imgBg" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{image.imgVersion}}/{{image.imgId}}">
                         <button *ngIf="hasImages" ion-button clear (click)="SetAsDefault(image)" class="imgBtn">
                             Set As Default
                         </button>

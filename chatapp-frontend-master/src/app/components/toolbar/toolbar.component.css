@@ -1,5 +1,9 @@
 nav {
-  background-color: #64b5f6;
+  background: url(https://s3-ap-southeast-1.amazonaws.com/esquire-sg/wp-content/uploads/2020/04/16230804/money-heist-season-5-832x416.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .brand-logo {
@@ -8,11 +12,11 @@ nav {
 }
 
 .navDiv {
-  background-color: #64b5f6;
+  background: #64b5f6;
 }
 
 .nav-content {
-  height: 250px;
+  height: 210px;
 }
 
 .nav-div {
@@ -21,17 +25,17 @@ nav {
   display: block;
   text-align: center;
   margin: 0 auto;
-  margin-top: 15px;
 }
 
 .nav-div img {
-  margin-top: 20px;
-  width: 140px;
-  height: 140px;
+  margin-top: 0px;
+  width: 180px;
+  height: 160px;
   border-radius: 50%;
-  border: 10px solid rgba(255, 255, 255, 0.3);
+  border: 5px solid #64b5f6c7;
   text-align: center;
   margin: 0 auto;
+  box-shadow: 2px 2px 1px #e6e6e6;
 }
 
 .profile-name {
@@ -39,6 +43,7 @@ nav {
   font-size: 40px;
   text-align: center;
   margin: 0 auto;
+  font-weight: 700;
 }
 
 .user-text {
@@ -106,7 +111,7 @@ nav {
 }
 
 .material-icons {
-  color: #64b5f6 !important;
+  color: #64b5f6!important;
   cursor: pointer;
 }
 
@@ -116,7 +121,7 @@ nav {
 
 .markAll {
   color: #ffffff;
-  background: #64b5f6 !important;
+  background: #64b5f6!important;
 }
 
 li.dropdown-button {

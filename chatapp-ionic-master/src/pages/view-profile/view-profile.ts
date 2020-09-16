@@ -44,7 +44,7 @@ export class ViewProfilePage {
   }
 
   UserImage() {
-    const imgUrl = `http://res.cloudinary.com/ratingapp/image/upload/v${
+    const imgUrl = `http://res.cloudinary.com/duojkrgue/image/upload/v${
       this.userData.picVersion
     }/${this.userData.picId}`;
     this.headerImage = this.sanitizer.bypassSecurityTrustStyle(

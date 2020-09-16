@@ -5,9 +5,15 @@
 }
 
 .tabs .active {
-  background: inherit !important;
+  background: #64b5f6;
+  color: white;
 }
 
 container {
   overflow-y: scroll;
+}
+
+.tabs .tab a:focus, .tabs .tab a:focus.active {
+  background-color: #64b5f6;
+  color: white;
 }

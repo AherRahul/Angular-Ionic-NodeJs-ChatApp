@@ -54,7 +54,6 @@ export class PostsComponent implements OnInit {
     if (this.noOfItemsToShowInitially <= this.posts.length) {
       this.noOfItemsToShowInitially += this.itemsToLoad;
       this.itemsToShow = this.posts.slice(0, this.noOfItemsToShowInitially);
-      console.log(this.itemsToShow);
     } else {
       console.log('Not scrolled');
       this.isFullListDisplayed = true;
@@ -109,6 +108,8 @@ export class PostsComponent implements OnInit {
   DeletePost() {
     this.postService.DeletePost(this.postValue._id).subscribe(
       data => {
+        console.log(data);
+        
         this.socket.emit('refresh', {});
       },
       err => console.log(err)

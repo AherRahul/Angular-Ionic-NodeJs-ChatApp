@@ -1,81 +1,17 @@
 <div class="search-results" infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="3000" (scrolled)="onScrollDown()">
-
     <ul class="collection col s12 m12 l10" *ngFor="let post of itemsToShow">
         <li class="collection-item avatar">
-            <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.user.picVersion}}/{{post.user.picId}}" alt="" class="circle">
-            <span class="title">{{post.username}}</span>
-            <span data-target="modal" class="title secondary-content modal-trigger" *ngIf="post.username === user.username" (click)="OpenEditModal(post)">
-                Edit
-            </span>
-            <p class="time">{{TimeFromNow(post.created)}}
-                <br> @{{post.user.city}}, {{post.user.country}}
-            </p>
-        </li>
-        <div class="row">
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-image" *ngIf="post.imgId">
-                        <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.imgVersion}}/{{post.imgId}}">
-                    </div>
-                    <div class="card-content">
-                        <p>{{post.post}}</p>
-                    </div>
-                    <div class="card-action">
-                        <i (click)="LikePost(post)" [ngClass]="(!CheckInLikesArray(post.likes, user.username)) ? 'notLiked' : 'liked'" class="material-icons">thumb_up</i>
-                        <span class="iconSpan">
-                            {{post.totalLikes}}
-                        </span>
-                        <i class="material-icons" [ngClass]="(!CheckInLikesArray(post.comments, user.username)) ? 'notLiked' : 'liked'" (click)="OpenCommentBox(post)">chat</i>
-                        <span class="iconSpan">
-                            {{post.comments.length}}
-                        </span>
-                    </div>
-                </div>
+            <div *ngIf="post.user.picVersion != '1531305955'">
+                <img src="http://res.cloudinary.com/duojkrgue/image/upload/v{{post.user.picVersion}}/{{post.user.picId}}" style= "height: 65px; width: 65px;" alt="" class="circle">
             </div>
-        </div>
-    </ul>
-    <ul class="collection col s12 m12 l10" *ngFor="let post of itemsToShow">
-        <li class="collection-item avatar">
-            <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.user.picVersion}}/{{post.user.picId}}" alt="" class="circle">
-            <span class="title">{{post.username}}</span>
-            <span data-target="modal" class="title secondary-content modal-trigger" *ngIf="post.username === user.username" (click)="OpenEditModal(post)">
-                Edit
-            </span>
-            <p class="time">{{TimeFromNow(post.created)}}
-                <br> @{{post.user.city}}, {{post.user.country}}
-            </p>
-        </li>
-        <div class="row">
-            <div class="col s12">
-                <div class="card">
-                    <div class="card-image" *ngIf="post.imgId">
-                        <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.imgVersion}}/{{post.imgId}}">
-                    </div>
-                    <div class="card-content">
-                        <p>{{post.post}}</p>
-                    </div>
-                    <div class="card-action">
-                        <i (click)="LikePost(post)" [ngClass]="(!CheckInLikesArray(post.likes, user.username)) ? 'notLiked' : 'liked'" class="material-icons">thumb_up</i>
-                        <span class="iconSpan">
-                            {{post.totalLikes}}
-                        </span>
-                        <i class="material-icons" [ngClass]="(!CheckInLikesArray(post.comments, user.username)) ? 'notLiked' : 'liked'" (click)="OpenCommentBox(post)">chat</i>
-                        <span class="iconSpan">
-                            {{post.comments.length}}
-                        </span>
-                    </div>
-                </div>
+            <div *ngIf="post.user.picVersion == '1531305955'" >
+                <img  class="circle" src="../../../assets/original.png">
             </div>
-        </div>
-    </ul>
-    <ul class="collection col s12 m12 l10" *ngFor="let post of itemsToShow">
-        <li class="collection-item avatar">
-            <img src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.user.picVersion}}/{{post.user.picId}}" alt="" class="circle">
-            <span class="title">{{post.username}}</span>
-            <span data-target="modal" class="title secondary-content modal-trigger" *ngIf="post.username === user.username" (click)="OpenEditModal(post)">
+            <span class="title" style="margin-left: 15px;">{{post.username}}</span>
+            <span data-target="modal" class="title secondary-content modal-trigger" *ngIf="post.username === user.username" (click)="OpenEditModal(post)" style="cursor: pointer; box-shadow: 1px 1px 2px #aaaaaa;  padding: 5px 15px; border-radius: 3px; color: white; background-color: #64b5f6;">
                 Edit
             </span>
-            <p class="time">{{TimeFromNow(post.created)}}
+            <p class="time" style="margin-left: 15px;"> {{TimeFromNow(post.created)}}
                 <br> @{{post.user.city}}, {{post.user.country}}
             </p>
         </li>
@@ -83,7 +19,7 @@
             <div class="col s12">
                 <div class="card">
                     <div class="card-image" *ngIf="post.imgId">
-                        <img class="postImage" src="http://res.cloudinary.com/ratingapp/image/upload/v{{post.imgVersion}}/{{post.imgId}}">
+                        <img class="postImage" src="http://res.cloudinary.com/duojkrgue/image/upload/v{{post.imgVersion}}/{{post.imgId}}">
                     </div>
                     <div class="card-content">
                         <p>{{post.post}}</p>
@@ -112,7 +48,7 @@
 <div class="container">
     <div id="modal" class="modal">
         <div class="modal-content">
-            <h4>
+            <h4 style="color: #64b5f6;">
                 Edit Post
                 <button class="secondary-content deleteBtn btn" (click)="DeletePost()">
                     Delete

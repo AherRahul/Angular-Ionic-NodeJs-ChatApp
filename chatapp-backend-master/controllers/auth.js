@@ -83,8 +83,6 @@ module.exports = {
                 .json({ message: 'No empty fields allowed' });
         }
 
-        console.log(req.body);
-
         await User.findOne({ username: Helpers.firstUpper(req.body.username) }, (err, user) => {
             if (!user) {
                 return res

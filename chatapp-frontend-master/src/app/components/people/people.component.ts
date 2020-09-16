@@ -16,6 +16,7 @@ export class PeopleComponent implements OnInit {
   loggedInUser: any;
   userArr = [];
   onlineusers = [];
+  imgURL = '';
 
   constructor(private usersService: UsersService, private tokenService: TokenService, private router: Router) {
     this.socket = io('http://localhost:3000');
@@ -34,7 +35,16 @@ export class PeopleComponent implements OnInit {
 
   GetUsers() {
     this.usersService.GetAllUsers().subscribe(data => {
+      console.log(data);
+      
       _.remove(data.result, { username: this.loggedInUser.username });
+      for (let i = 0; i < data.result.length; i++) {
+        if (data.result[i].images.length === 0 ) {
+          data.result[i].image = {
+            "picVersion" : false
+          }
+        }
+      }
       this.users = data.result;
     });
   }

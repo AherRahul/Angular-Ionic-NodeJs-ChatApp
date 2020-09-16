@@ -68,6 +68,8 @@ export class ImagesComponent implements OnInit {
   }
 
   SetProfileImage(image) {
+    console.log(image);
+    
     this.usersService.SetDefaultImage(image.imgId, image.imgVersion).subscribe(
       data => {
         this.socket.emit('refresh', {});
