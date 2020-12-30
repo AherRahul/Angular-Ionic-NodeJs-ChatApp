@@ -8,9 +8,24 @@ import { SignupComponent } from '../components/signup/signup.component';
 import { AuthService } from '../services/auth.service';
 
 @NgModule({
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
-  declarations: [AuthTabsComponent, LoginComponent, SignupComponent],
-  exports: [AuthTabsComponent, LoginComponent, SignupComponent],
-  providers: [AuthService]
+  imports: [
+    CommonModule, 
+    HttpClientModule, 
+    FormsModule, 
+    ReactiveFormsModule
+  ],
+  declarations: [
+    AuthTabsComponent, 
+    LoginComponent, 
+    SignupComponent
+  ],
+  exports: [
+    AuthTabsComponent, 
+    LoginComponent, 
+    SignupComponent
+  ],
+  providers: [
+    AuthService
+  ]
 })
 export class AuthModule {}
