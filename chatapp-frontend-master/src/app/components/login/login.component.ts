@@ -14,25 +14,25 @@ export class LoginComponent implements OnInit {
   errorMessage: string;
   showSpinner = false;
 
-  constructor(
+  constructor (
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
     private tokenService: TokenService
   ) {}
 
-  ngOnInit() {
+  ngOnInit () {
     this.init();
   }
 
-  init() {
+  init () {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
 
-  loginUser() {
+  loginUser () {
     this.showSpinner = true;
     this.authService.loginUser(this.loginForm.value).subscribe(
       data => {
