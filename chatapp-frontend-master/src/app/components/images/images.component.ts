@@ -4,7 +4,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { Component, OnInit } from '@angular/core';
 import io from 'socket.io-client';
 
-const URL = 'api/chatapp/upload-image';
+const URL = 'http://localhost:3000/api/chatapp/upload-image';
 
 @Component({
   selector: 'app-images',

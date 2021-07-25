@@ -2,7 +2,7 @@ import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-const BASEURL = 'api/chatapp';
+const BASEURL = 'http://localhost:3000/http://localhost:3000/api/chatapp';
 
 @Injectable()
 export class PostProvider {
