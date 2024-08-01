@@ -8,12 +8,20 @@ const _ = require('lodash');
 const app = express();
 const url = 'mongodb+srv://aherrahul1995:wc1JHSVWTOByWQFW@cluster0.5gzasj1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-app.use(cors({
-  origin: 'https://rds-chat-app.netlify.app/', // Replace with your actual frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+app.use(cors());
 
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-origin", "*");
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-with, Content-Type, Accept, Authorization"
+  );
+  next();
+})
 // Socket.io Config
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
