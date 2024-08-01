@@ -23,7 +23,7 @@ export class PopOverPage {
     private tokenProvider: TokenProvider
   ) {
     this.user = this.navParams.get('user');
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ionViewDidLoad() {

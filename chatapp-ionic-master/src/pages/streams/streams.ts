@@ -31,7 +31,7 @@ export class StreamsPage {
     private modalCtrl: ModalController
   ) {
     this.stream = 'post';
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ionViewDidLoad() {

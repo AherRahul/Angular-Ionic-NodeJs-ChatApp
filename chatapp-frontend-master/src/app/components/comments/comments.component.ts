@@ -20,7 +20,7 @@ export class CommentsComponent implements OnInit, AfterViewInit {
   post: string;
 
   constructor(private fb: FormBuilder, private postService: PostService, private route: ActivatedRoute) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {

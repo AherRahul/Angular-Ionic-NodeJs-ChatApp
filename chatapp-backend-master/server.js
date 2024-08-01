@@ -8,7 +8,11 @@ const _ = require('lodash');
 const app = express();
 const url = 'mongodb+srv://aherrahul1995:wc1JHSVWTOByWQFW@cluster0.5gzasj1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://rds-chat-app.netlify.app/', // Replace with your actual frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 // Socket.io Config
 const server = require('http').createServer(app);

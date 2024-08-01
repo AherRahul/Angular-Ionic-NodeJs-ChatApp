@@ -20,7 +20,7 @@ export class PostPage {
     private postProvider: PostProvider,
     private camera: Camera
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ionViewDidLoad() {}

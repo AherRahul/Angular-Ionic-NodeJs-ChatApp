@@ -17,7 +17,7 @@ export class TopStreamsComponent implements OnInit {
   user: any;
 
   constructor(private postService: PostService, private tokenService: TokenService, private router: Router) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {

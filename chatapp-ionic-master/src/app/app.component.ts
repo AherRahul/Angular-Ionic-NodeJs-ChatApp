@@ -26,7 +26,7 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
 
-      this.socket = io('http://localhost:3000');
+      this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
 
       this.storage.get('auth-token').then(token => {
         if (token) {

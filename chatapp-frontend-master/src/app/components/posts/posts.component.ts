@@ -33,7 +33,7 @@ export class PostsComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {
@@ -109,7 +109,7 @@ export class PostsComponent implements OnInit {
     this.postService.DeletePost(this.postValue._id).subscribe(
       data => {
         console.log(data);
-        
+
         this.socket.emit('refresh', {});
       },
       err => console.log(err)

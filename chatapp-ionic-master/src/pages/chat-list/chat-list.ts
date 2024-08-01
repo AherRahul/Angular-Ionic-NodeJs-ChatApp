@@ -24,7 +24,7 @@ export class ChatListPage {
     private tokenProvider: TokenProvider,
     private msgProvider: MessageProvider
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ionViewDidLoad() {

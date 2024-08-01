@@ -21,7 +21,7 @@ export class CommentsPage {
     public navParams: NavParams,
     private postProvider: PostProvider
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
     this.post = this.navParams.get('post');
     this.tabElement = document.querySelector('.tabbar.show-tabbar');
   }

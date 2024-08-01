@@ -13,7 +13,7 @@ export class ImagesComponent implements OnChanges {
   socket: any;
 
   constructor(private usersProvider: UsersProvider) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnChanges() {

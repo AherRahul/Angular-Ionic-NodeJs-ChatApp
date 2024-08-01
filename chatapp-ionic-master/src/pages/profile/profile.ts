@@ -27,7 +27,7 @@ export class ProfilePage {
     private usersProvider: UsersProvider
   ) {
     this.userprofile = 'posts';
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ionViewDidLoad() {

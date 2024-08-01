@@ -49,7 +49,7 @@ export class ChatPage {
     private tokenProvider: TokenProvider,
     private usersProvider: UsersProvider
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
     this.tabElement = document.querySelector('.tabbar.show-tabbar');
     this.receiverId = this.navParams.get('receiverId');
     this.receiverName = this.navParams.get('receiverName');

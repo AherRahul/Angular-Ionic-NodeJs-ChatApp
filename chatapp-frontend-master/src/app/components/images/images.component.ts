@@ -4,7 +4,7 @@ import { FileUploader } from 'ng2-file-upload';
 import { Component, OnInit } from '@angular/core';
 import io from 'socket.io-client';
 
-const URL = 'http://localhost:3000/api/chatapp/upload-image';
+const URL = 'https://angular-ionic-nodejs-chatapp.onrender.com/api/chatapp/upload-image';
 
 @Component({
   selector: 'app-images',
@@ -23,7 +23,7 @@ export class ImagesComponent implements OnInit {
   socket: any;
 
   constructor(private usersService: UsersService, private tokenService: TokenService) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {
@@ -69,7 +69,7 @@ export class ImagesComponent implements OnInit {
 
   SetProfileImage(image) {
     console.log(image);
-    
+
     this.usersService.SetDefaultImage(image.imgId, image.imgVersion).subscribe(
       data => {
         this.socket.emit('refresh', {});

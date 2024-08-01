@@ -33,7 +33,7 @@ export class ViewUserComponent implements OnInit, AfterViewInit {
     private postService: PostService,
     private fb: FormBuilder
   ) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {

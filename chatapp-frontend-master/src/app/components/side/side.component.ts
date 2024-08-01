@@ -14,7 +14,7 @@ export class SideComponent implements OnInit {
   userData: any;
 
   constructor(private tokenService: TokenService, private usersService: UsersService) {
-    this.socket = io('http://localhost:3000');
+    this.socket = io('https://angular-ionic-nodejs-chatapp.onrender.com');
   }
 
   ngOnInit() {
