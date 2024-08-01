@@ -116,8 +116,8 @@ module.exports = {
                         await User.update({
                             _id: req.user._id
                         }, {
-                            city: body.city,
-                            country: body.country_name
+                            city: body ? body.city : '',
+                            country: body ? body.country_name : ''
                         });
                     }
                 );

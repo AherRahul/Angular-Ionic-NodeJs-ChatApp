@@ -6,12 +6,13 @@ const cors = require('cors');
 const _ = require('lodash');
 
 const app = express();
+const url = 'mongodb+srv://aherrahul1995:wc1JHSVWTOByWQFW@cluster0.5gzasj1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 app.use(cors());
 
 // Socket.io Config
 const server = require('http').createServer(app);
-const io = require('socket.io').listen(server);
+const io = require('socket.io')(server);
 
 const { User } = require('./Helpers/UserClass');
 
@@ -27,18 +28,23 @@ const friends = require('./routes/friendsRoutes');
 const message = require('./routes/messageRoutes');
 const image = require('./routes/imageRoutes');
 
-
 // Middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 
 // DB Connection
-//mongoose.Promise = global.Promise;
-mongoose.connect(
-    dbConfig.url, { useNewUrlParser: true }
-);
-
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => {
+  console.log('Successfully connected to database.');
+})
+.catch((error) => {
+  console.error('Error connecting to database', error);
+  process.exit(1);
+});
 
 // Routes
 app.use('/api/chatapp', auth);
@@ -48,11 +54,10 @@ app.use('/api/chatapp', friends);
 app.use('/api/chatapp', message);
 app.use('/api/chatapp', image);
 
-
-// Initalizing Port
+// Initializing Port
 const port = process.env.PORT || 8080;
 
 // Server Created
 server.listen(port, () => {
-    console.log('Listening on port ' + port);
+  console.log('Listening on port ' + port);
 });
