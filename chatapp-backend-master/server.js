@@ -23,7 +23,18 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.options('*', cors(corsOptionsDelegate)); // Handle OPTIONS request globally
+// // CORS options delegate function to dynamically set the allowed origin
+// const corsOptionsDelegate = (req, callback) => {
+//   let corsOptions;
+//   if (allowedOrigins.indexOf(req.header('Origin')) !== -1) {
+//     corsOptions = { origin: true }; // Reflect the origin
+//   } else {
+//     corsOptions = { origin: false }; // Block the origin
+//   }
+//   callback(null, corsOptions); // Callback expects two parameters: error and options
+// };
+
+// app.options('*', cors(corsOptionsDelegate)); // Handle OPTIONS request globally
 
 // Socket.io Config
 const server = require('http').createServer(app);
