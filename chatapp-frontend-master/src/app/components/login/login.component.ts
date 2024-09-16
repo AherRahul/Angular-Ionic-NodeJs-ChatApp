@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
       err => {
         this.showSpinner = false;
 
+        console.log(err);
         if (err.error.message) {
           this.errorMessage = err.error.message;
         }
