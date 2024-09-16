@@ -6,7 +6,7 @@ const cors = require('cors');
 const _ = require('lodash');
 
 const app = express();
-const url = 'mongodb+srv://aherrahul1995:wc1JHSVWTOByWQFW@cluster0.5gzasj1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const url = 'mongodb+srv://aherrahul1:R@hu95heR@cluster0.15fjf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 app.use(cors());
 
