@@ -23,6 +23,8 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.options('*', cors(corsOptionsDelegate)); // Handle OPTIONS request globally
+
 // Socket.io Config
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
